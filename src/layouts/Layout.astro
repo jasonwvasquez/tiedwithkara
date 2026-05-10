@@ -22,14 +22,15 @@ const { title } = Astro.props;
 		<!-- Navigation Bar -->
 		<nav class="fixed w-full top-0 z-50 bg-linen/90 backdrop-blur-sm border-b border-sage-light/30">
 			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-				<a href="/" class="text-2xl font-serif text-sage tracking-wide hover:text-bronze transition-colors">TWK.</a>
+				<!-- Add /tiedwithkara/ to the home link -->
+				<a href="/tiedwithkara/" class="text-2xl font-serif text-sage tracking-wide hover:text-bronze transition-colors">TWK.</a>
 				
 				<ul class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-sage">
-					<li><a href="/" class="hover:text-bronze transition-colors">Home</a></li>
-					<li><a href="/portfolio" class="hover:text-bronze transition-colors">Portfolio</a></li>
-					<li><a href="/packages" class="hover:text-bronze transition-colors">Packages</a></li>
-					<li><a href="/about" class="hover:text-bronze transition-colors">About</a></li>
-					<li><a href="/contact" class="hover:text-bronze transition-colors">Contact</a></li>
+					<li><a href="/tiedwithkara/" class="hover:text-bronze transition-colors">Home</a></li>
+					<li><a href="/tiedwithkara/portfolio" class="hover:text-bronze transition-colors">Portfolio</a></li>
+					<li><a href="/tiedwithkara/packages" class="hover:text-bronze transition-colors">Packages</a></li>
+					<li><a href="/tiedwithkara/about" class="hover:text-bronze transition-colors">About</a></li>
+					<li><a href="/tiedwithkara/contact" class="hover:text-bronze transition-colors">Contact</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -45,7 +46,7 @@ const { title } = Astro.props;
 				
 				<!-- Brand Column -->
 				<div class="md:col-span-1">
-					<a href="/" class="text-3xl font-serif tracking-wide block mb-6 text-linen hover:text-bronze transition-colors">TWK.</a>
+					<a href="/tiedwithkara/" class="text-3xl font-serif tracking-wide block mb-6 text-linen hover:text-bronze transition-colors">TWK.</a>
 					<p class="text-linen/70 font-light text-sm leading-relaxed pr-4">
 						Bespoke wedding planning and design, curating unforgettable moments with minimalist elegance.
 					</p>
@@ -55,10 +56,10 @@ const { title } = Astro.props;
 				<div>
 					<h3 class="text-bronze text-xs tracking-widest uppercase mb-6">Explore</h3>
 					<ul class="space-y-4 font-light text-sm text-linen/80">
-						<li><a href="/" class="hover:text-bronze transition-colors">Home</a></li>
-						<li><a href="/portfolio" class="hover:text-bronze transition-colors">Portfolio</a></li>
-						<li><a href="/packages" class="hover:text-bronze transition-colors">Packages</a></li>
-						<li><a href="/about" class="hover:text-bronze transition-colors">About</a></li>
+						<li><a href="/tiedwithkara/" class="hover:text-bronze transition-colors">Home</a></li>
+						<li><a href="/tiedwithkara/portfolio" class="hover:text-bronze transition-colors">Portfolio</a></li>
+						<li><a href="/tiedwithkara/packages" class="hover:text-bronze transition-colors">Packages</a></li>
+						<li><a href="/tiedwithkara/about" class="hover:text-bronze transition-colors">About</a></li>
 					</ul>
 				</div>
 
@@ -66,7 +67,7 @@ const { title } = Astro.props;
 				<div>
 					<h3 class="text-bronze text-xs tracking-widest uppercase mb-6">Connect</h3>
 					<ul class="space-y-4 font-light text-sm text-linen/80">
-						<li><a href="/contact" class="hover:text-bronze transition-colors">Inquire Now</a></li>
+						<li><a href="/tiedwithkara/contact" class="hover:text-bronze transition-colors">Inquire Now</a></li>
 						<li><a href="mailto:kara@tiedwithkara.com" class="hover:text-bronze transition-colors">kara@tiedwithkara.com</a></li>
 						<li>Serving Virginia & Beyond</li>
 					</ul>
