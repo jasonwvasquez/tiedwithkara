@@ -1,10 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
+  // Replace 'username' and 'repo' with yours
+  site: 'https://jasonwvasquez.github.io/tiedwithkara', 
   vite: {
     plugins: [tailwindcss()]
   }
