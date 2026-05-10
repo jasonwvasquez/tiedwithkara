@@ -22,9 +22,9 @@ const { title } = Astro.props;
 		<!-- Navigation Bar -->
 		<nav class="fixed w-full top-0 z-50 bg-linen/90 backdrop-blur-sm border-b border-sage-light/30">
 			<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-				<!-- Add /tiedwithkara/ to the home link -->
 				<a href="/tiedwithkara/" class="text-2xl font-serif text-sage tracking-wide hover:text-bronze transition-colors">TWK.</a>
 				
+				<!-- Desktop Menu (Hidden on mobile) -->
 				<ul class="hidden md:flex space-x-8 text-sm tracking-widest uppercase text-sage">
 					<li><a href="/tiedwithkara/" class="hover:text-bronze transition-colors">Home</a></li>
 					<li><a href="/tiedwithkara/portfolio" class="hover:text-bronze transition-colors">Portfolio</a></li>
@@ -32,8 +32,60 @@ const { title } = Astro.props;
 					<li><a href="/tiedwithkara/about" class="hover:text-bronze transition-colors">About</a></li>
 					<li><a href="/tiedwithkara/contact" class="hover:text-bronze transition-colors">Contact</a></li>
 				</ul>
+
+				<!-- Hamburger Button (Visible only on mobile) -->
+				<button id="menu-button" class="md:hidden text-sage focus:outline-none p-2" aria-label="Toggle Menu">
+					<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />
+					</svg>
+				</button>
+			</div>
+
+			<!-- Mobile Menu Overlay (Hidden by default) -->
+			<div id="mobile-menu" class="fixed inset-0 bg-linen z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-serif text-sage opacity-0 pointer-events-none transition-all duration-300 translate-x-full">
+				<a href="/tiedwithkara/" class="mobile-link">Home</a>
+				<a href="/tiedwithkara/portfolio" class="mobile-link">Portfolio</a>
+				<a href="/tiedwithkara/packages" class="mobile-link">Packages</a>
+				<a href="/tiedwithkara/about" class="mobile-link">About</a>
+				<a href="/tiedwithkara/contact" class="mobile-link">Contact</a>
 			</div>
 		</nav>
+
+		<script>
+			const menuButton = document.getElementById('menu-button');
+			const mobileMenu = document.getElementById('mobile-menu');
+			const menuIcon = document.getElementById('menu-icon');
+			const mobileLinks = document.querySelectorAll('.mobile-link');
+
+			let isMenuOpen = false;
+
+			function toggleMenu() {
+				isMenuOpen = !isMenuOpen;
+				
+				if (isMenuOpen) {
+					// Open state
+					mobileMenu?.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+					mobileMenu?.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+					// Change icon to an 'X'
+					if (menuIcon) menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />';
+					document.body.style.overflow = 'hidden'; // Prevent scrolling
+				} else {
+					// Closed state
+					mobileMenu?.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+					mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+					// Change icon back to hamburger
+					if (menuIcon) menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7" />';
+					document.body.style.overflow = ''; // Restore scrolling
+				}
+			}
+
+			menuButton?.addEventListener('click', toggleMenu);
+
+			// Close menu when a link is clicked
+			mobileLinks.forEach(link => {
+				link.addEventListener('click', toggleMenu);
+			});
+		</script>
 
 		<!-- Page Content Injected Here -->
 		<div class="flex-grow">
