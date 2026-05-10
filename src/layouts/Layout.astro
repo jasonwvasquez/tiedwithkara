@@ -42,12 +42,17 @@ const { title } = Astro.props;
 			</div>
 
 			<!-- Mobile Menu Overlay -->
-			<div id="mobile-menu" class="fixed inset-0 bg-linen z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-serif text-sage opacity-0 pointer-events-none transition-all duration-300 translate-x-full">
+			<div id="mobile-menu" class="fixed inset-0 bg-linen z-40 flex flex-col items-center justify-start pt-32 space-y-10 text-2xl font-serif text-sage opacity-0 pointer-events-none transition-all duration-300 translate-x-full overflow-y-auto">
 				<a href="/tiedwithkara/" class="mobile-link">Home</a>
 				<a href="/tiedwithkara/portfolio" class="mobile-link">Portfolio</a>
 				<a href="/tiedwithkara/packages" class="mobile-link">Packages</a>
 				<a href="/tiedwithkara/about" class="mobile-link">About</a>
 				<a href="/tiedwithkara/contact" class="mobile-link">Contact</a>
+				
+				<!-- Optional: Add a small decorative element at the bottom to ensure the last link isn't cramped -->
+				<div class="pt-12 pb-8">
+					<span class="text-bronze text-xs tracking-[0.2em] uppercase">Tied With Kara</span>
+				</div>
 			</div>
 		</nav>
 
