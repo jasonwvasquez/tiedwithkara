@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 permissions:
   contents: read
@@ -15,5 +15,11 @@ jobs:
     steps:
       - name: Checkout your repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22 # This fixes the 'Node.js v20 not supported' error
+
       - name: Install, build, and upload your site
         uses: withastro/action@v3
