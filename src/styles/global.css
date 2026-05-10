@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  /* Your custom Tied With Kara Palette */
+  --color-sage: #5C6E51;
+  --color-sage-light: #A3B899;
+  --color-moss: #C2C6A8;
+  --color-bronze: #A67E4D;
+  --color-gold: #C4A580;
+  --color-linen: #E1DDD4;
+
+  /* Your typography */
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}

@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Import the specific about photos
+import headshot from '../assets/about/headshot.png';
+import headshot2 from '../assets/about/headshot2.png';
+import groupPhoto from '../assets/about/group.png';
+---
+
+<Layout title="About Kara | Tied With Kara">
+	<main class="pt-48 pb-24 bg-linen">
+		
+		<div class="max-w-7xl mx-auto px-6">
+			<!-- Top Section: Intro & Primary Headshot -->
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
+				<div class="order-2 md:order-1">
+					<p class="text-bronze text-xs tracking-widest uppercase mb-4">The Face Behind the Magic</p>
+					<h1 class="text-5xl md:text-7xl font-serif text-sage leading-tight mb-8">
+						Hi, I’m Kara— <br/>your go-to <br/>wedding planner.
+					</h1>
+					<div class="text-lg text-sage/80 font-light leading-relaxed space-y-6 max-w-lg">
+						<p>
+							From the first spark of inspiration to the final details on your big day, I’m here to make your wedding planning journey smooth, stress-free, and unforgettable.
+						</p>
+						<p>
+							Whether you're just getting started or tying up last-minute details, I’m by your side every step of the way. I believe in creating celebrations that aren't just beautiful, but deeply personal.
+						</p>
+					</div>
+				</div>
+				<div class="order-1 md:order-2">
+					<div class="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl">
+						<Image src={headshot} alt="Kara - Lead Wedding Planner" class="w-full h-full object-cover" />
+					</div>
+				</div>
+			</div>
+
+			<!-- Middle Section: Visual Break -->
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+				<div class="md:col-span-2 overflow-hidden rounded-sm shadow-lg h-96">
+					<Image src={groupPhoto} alt="Tied With Kara Team" class="w-full h-full object-cover" />
+				</div>
+				<div class="overflow-hidden rounded-sm shadow-lg h-96">
+					<Image src={headshot2} alt="Kara at work" class="w-full h-full object-cover" />
+				</div>
+			</div>
+
+			<!-- Bottom Section: Contact & Call to Action -->
+			<div class="bg-sage text-linen p-12 md:p-20 rounded-sm text-center">
+				<h2 class="text-3xl md:text-5xl font-serif mb-8 text-moss">Let’s start the journey.</h2>
+				<div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-lg font-light tracking-wide">
+					<div class="flex flex-col items-center">
+						<span class="text-bronze text-xs uppercase tracking-widest mb-2">Text or Call</span>
+						<a href="tel:7863900586" class="hover:text-gold transition-colors">(786) 390-0586</a>
+					</div>
+					<div class="hidden md:block w-px h-12 bg-linen/20"></div>
+					<div class="flex flex-col items-center">
+						<span class="text-bronze text-xs uppercase tracking-widest mb-2">Email</span>
+						<a href="mailto:kara@tiedwithkara.com" class="hover:text-gold transition-colors">kara@tiedwithkara.com</a>
+					</div>
+				</div>
+				<a href="/contact" class="inline-block mt-12 px-10 py-4 border border-linen text-linen text-sm tracking-widest uppercase hover:bg-linen hover:text-sage transition-colors duration-300">
+					Book a Consultation
+				</a>
+			</div>
+		</div>
+
+	</main>
+</Layout>

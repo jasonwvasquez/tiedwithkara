@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImage from '../assets/hero/window_sill.JPG';
+---
+
+<Layout title="Tied With Kara | Wedding Planning">
+	<main class="pt-24">
+		
+		<!-- 1. Hero Section -->
+		<section class="min-h-[85vh] flex items-center mb-24">
+			<div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+				
+				<!-- Text Content -->
+				<div class="flex flex-col justify-center items-start order-2 md:order-1">
+					<h1 class="text-5xl md:text-7xl font-serif text-sage leading-tight mb-6">
+						Tied With Kara
+					</h1>
+					<p class="text-lg text-sage-light tracking-widest uppercase mb-10 border-l-2 border-bronze pl-4">
+						Bespoke Wedding Planning & Design
+					</p>
+					<div class="flex gap-4">
+						<a href="/packages" class="px-8 py-3 bg-sage text-linen text-sm tracking-widest uppercase hover:bg-bronze transition-colors duration-300">
+							View Packages
+						</a>
+						<a href="/portfolio" class="px-8 py-3 border border-sage text-sage text-sm tracking-widest uppercase hover:bg-sage hover:text-linen transition-colors duration-300">
+							Portfolio
+						</a>
+					</div>
+				</div>
+
+				<!-- Hero Image -->
+				<div class="order-1 md:order-2 w-full h-[60vh] md:h-[80vh] overflow-hidden rounded-sm shadow-xl">
+					<Image 
+						src={heroImage} 
+						alt="Elegant wedding decor on a window sill" 
+						class="w-full h-full object-cover"
+						quality="high"
+					/>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- 2. Philosophy / Meet Kara Section -->
+		<section class="bg-sage text-linen py-24 md:py-32">
+			<div class="max-w-4xl mx-auto px-6 text-center">
+				<h2 class="text-3xl md:text-5xl font-serif mb-8 text-moss">
+					Curating Unforgettable Moments
+				</h2>
+				<p class="text-lg md:text-xl font-light tracking-wide leading-relaxed mb-10 text-linen/90">
+					At Tied With Kara, we believe your wedding should be a seamless reflection of your unique story. We blend minimalist elegance with nature-inspired design to create bespoke celebrations that feel both timeless and deeply personal. From the first sketch to the final send-off, we handle the details so you can stay present in the magic.
+				</p>
+				<a href="/about" class="inline-block px-8 py-3 border border-linen text-linen text-sm tracking-widest uppercase hover:bg-linen hover:text-sage transition-colors duration-300">
+					Meet Kara
+				</a>
+			</div>
+		</section>
+
+	</main>
+</Layout>
